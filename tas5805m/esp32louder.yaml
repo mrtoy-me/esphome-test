@@ -7,7 +7,7 @@ esphome:
     then:
     ## Set a volume limit just to be safe...
     - media_player.volume_set:
-        id: louderesp32
+        id: louder_mediaplayer
         volume: 10%
 
 esp32:
@@ -54,7 +54,8 @@ tas5805m:
 switch:
   - platform: tas5805m
     tas5805m_id: my_dac
-    id: dac_pwer
+    name: louder enable
+    id: louder_enable
 
 i2s_audio:
   i2s_lrclk_pin: GPIO25
@@ -62,8 +63,8 @@ i2s_audio:
 
 media_player:
   - platform: i2s_audio
-    name: louder_mediaplayer
-    id: louderesp32
+    name: louder mediaplayer
+    id: louder_mediaplayer
     dac_type: external
     i2s_dout_pin: GPIO22
     mode: stereo
