@@ -13,7 +13,12 @@ The following yaml can then be used to access the component:
 external_components:
   - source: components
 ```
-Alternatively
+Alternatively with out copying component files, use files directly from Github using the following yaml:
+```
+external_components:
+  - source: github://mrtoy-me/esphome-test@main
+    components: [ tas5805m ]
+```
 
 ## Example YAML
 ## Note that esp32 board, !secrets , psram configuration (if required)
