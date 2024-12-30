@@ -39,8 +39,8 @@ wifi:
 captive_portal:
 
 external_components:
-   - source: components
-     components: [ tas5805m ]
+  - source: github://mrtoy-me/esphome-test@main
+    components: [ tas5805m ]
 
 i2c:
   sda: GPIO21
