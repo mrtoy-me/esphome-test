@@ -13,7 +13,7 @@ The following yaml can then be used to access the component:
 external_components:
   - source: components
 ```
-Alternatively with out copying component files, use files directly from Github using the following yaml:
+Alternatively without copying component files, use files directly from Github using the following yaml:
 ```
 external_components:
   - source: github://mrtoy-me/esphome-test@main
