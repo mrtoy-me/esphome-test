@@ -36,7 +36,7 @@ void Tas5805mComponent::dump_config() {
 
   switch (this->error_code_) {
     case WRITE_REGISTER_FAILED:
-      ESP_LOGE(TAG, "  Write register failed");
+      ESP_LOGE(TAG, "  Write register failed with error code = %i",this->last_i2c_error_);
       break;
     case NONE:
       ESP_LOGD(TAG, "  Setup successful");
@@ -53,6 +53,7 @@ bool Tas5805mComponent::tas5805m_write_byte(uint8_t a_register, uint8_t data) {
     i2c::ErrorCode error_code = this->write_register(a_register, &data, 1, true);
     if (error_code != i2c::ERROR_OK) {
       ESP_LOGE(TAG, "  write register error %i", error_code);
+      this->last_i2c_error_ = (uint8_t)error_code;
       return false;
     }
     return true;

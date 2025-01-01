@@ -25,6 +25,8 @@ class Tas5805mComponent : public Component, public i2c::I2CDevice {
    } error_code_{NONE};
 
    GPIOPin *enable_pin_{nullptr};
+
+   uint8_t last_i2c_error_{0};
 };
 
 }  // namespace tas5805m
