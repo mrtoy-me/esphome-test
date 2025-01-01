@@ -7,7 +7,7 @@ external_components:
     components: [ tas5805m ]
 ```
 
-## Follow the this example YAML for configuration
+## Follow this example YAML for configuration
 ## Note that esp32 board, !secrets , psram configuration (if required)
 ## and most importantly GPIO pins will need to be configured according to your hardware
 ```
