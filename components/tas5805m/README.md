@@ -1,26 +1,13 @@
 
-## Usage: "tas5805m" component
-Copy files in "tas5805m" directory into a "tas5805m" subdirectory under a "components" directory<BR>
-under the "esphome" addon directory (of your homeassistant install)<BR>
-For example:
-```
-esphome
-├── components
-   ├── tas5805m
-```
-The following yaml can then be used to access the component:
-```
-external_components:
-  - source: components
-```
-Alternatively without copying component files, use files directly from Github using the following yaml:
+## Accessing: "tas5805m" component
+Pull componenet files directly from Github using the following yaml:
 ```
 external_components:
   - source: github://mrtoy-me/esphome-test@main
     components: [ tas5805m ]
 ```
 
-## Example YAML
+## Follow the this example YAML for configuration
 ## Note that esp32 board, !secrets , psram configuration (if required)
 ## and most importantly GPIO pins will need to be configured according to your hardware
 ```
@@ -64,12 +51,14 @@ wifi:
 captive_portal:
 
 external_components:
-   - source: components
-     components: [ tas5805m ]
+  - source: github://mrtoy-me/esphome-test@main
+    components: [ tas5805m ]
 
 i2c:
   sda: GPIO21
   scl: GPIO27
+  frequency: 100kHz
+  timeout: 10ms
   scan: True
 
 tas5805m:

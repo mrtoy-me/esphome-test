@@ -45,6 +45,8 @@ external_components:
 i2c:
   sda: GPIO21
   scl: GPIO27
+  frequency: 100kHz
+  timeout: 10ms
   scan: True
 
 tas5805m:
